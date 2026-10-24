@@ -1,11 +1,10 @@
-"use client";
-
-import { useEffect } from "react";
+import HeroSection from "./components/section/hero";
 
 export default function Home() {
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", "dark");
-  }, []);
-
-  return <div className="w-full text-center text-3xl">Hello world!</div>;
+  return (
+    <div className="">
+      {/* hero section */}
+      <HeroSection />
+    </div>
+  );
 }

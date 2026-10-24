@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* ---------- Light mode (default) ---------- */
+:root {
+  --background: #efefef;
+  --foreground: #171717;
+
+  /* added colors */
+  --primary: #06b6d4;
+  --secondary: #10b981;
+  --tertiary: #22d3ee;
+  --neutral: #0a0f1d;
+
+  /* derived surface/border tokens */
+  --surface: #ffffff;
+  --border: #d4d4d4;
+  --muted: #5c6370;
+  --on-primary: #0a0f1d;
+  --ring: #06b6d4;
+}
+
+/* ---------- Dark mode: follows OS preference ---------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --background: #0a0f1d;
+    --foreground: #efefef;
+
+    --primary: #22d3ee;
+    --secondary: #10b981;
+    --tertiary: #06b6d4;
+    --neutral: #efefef;
+
+    --surface: #111827;
+    --border: #1f2937;
+    --muted: #9ca3af;
+    --on-primary: #0a0f1d;
+    --ring: #22d3ee;
+  }
+}
+
+/* ---------- Dark mode: manual toggle (e.g. next-themes with attribute="data-theme") ---------- */
+:root[data-theme="dark"] {
+  --background: #0a0f1d;
+  --foreground: #efefef;
+
+  --primary: #22d3ee;
+  --secondary: #10b981;
+  --tertiary: #06b6d4;
+  --neutral: #efefef;
+
+  --surface: #111827;
+  --border: #1f2937;
+  --muted: #9ca3af;
+  --on-primary: #0a0f1d;
+  --ring: #22d3ee;
+}
+
+/* ---------- Tailwind v4: expose tokens as utilities (bg-primary, text-secondary, ...) ---------- */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-neutral: var(--neutral);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-on-primary: var(--on-primary);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+/* ---------- Base styles ---------- */
+html {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+a {
+  color: var(--primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--tertiary);
+  color: var(--on-primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
