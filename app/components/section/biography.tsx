@@ -5,7 +5,7 @@ import { GraphStar, Zap } from "lucide-react";
 
 export default function Biography() {
   return (
-    <section title="biography" className="mt-25 px-4 sm:px-6 md:px-8 lg:px-12">
+    <section id="about" className="mt-25 px-4 sm:px-6 md:px-8 lg:px-12">
       {/* heading */}
       <SectionHeading index={1} title="Biography & Engineering Core" />
 

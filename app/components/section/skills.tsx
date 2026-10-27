@@ -50,7 +50,7 @@ const skillData = [
 
 export default function Skills() {
   return (
-    <section title="biography" className="mt-25 px-4 sm:px-6 md:px-8 lg:px-12">
+    <section id="skills" className="mt-25 px-4 sm:px-6 md:px-8 lg:px-12">
       {/* heading */}
       <SectionHeading index={2} title="Systems & Skill Matrix" />
 

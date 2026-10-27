@@ -2,6 +2,7 @@ import { MdOutlineTerminal } from "react-icons/md";
 import Button from "../ui/button";
 import { FileText } from "lucide-react";
 import HeroTerminal from "../ui/terminal";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -55,7 +56,9 @@ export default function HeroSection() {
 
           {/* buttons */}
           <div className="mt-8 flex flex-row gap-3">
-            <Button Icon={MdOutlineTerminal}>Explore Projects</Button>
+            <Button Icon={MdOutlineTerminal}>
+              <Link href="#projects">Explore Projects</Link>
+            </Button>
             <Button style="muted" Icon={FileText}>
               Download CV / Resume
             </Button>

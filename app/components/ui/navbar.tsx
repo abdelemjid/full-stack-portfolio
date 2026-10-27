@@ -1,6 +1,5 @@
 "use client";
 
-import { useActiveSection } from "@/app/hooks/useActiveSection";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,11 +19,9 @@ const navLinks: NavLink[] = [
   { label: "Contact", href: "#contact" },
 ];
 
-const ids = navLinks.map((link) => link.label.toLowerCase());
-
 export default function Navbar() {
-  const active = useActiveSection(ids);
   const [toggled, setToggled] = useState(false);
+  const [active, setActive] = useState("/");
 
   // lock page scroll while the menu is open + close on Escape
   useEffect(() => {
