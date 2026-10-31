@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
 
             <p className="text-xs text-muted">
-              &copy; {new Date().getFullYear()} 0X0061. All Rights Reserved.
+              &copy; 2026-2027 0X0061. All Rights Reserved.
             </p>
           </li>
         </ul>

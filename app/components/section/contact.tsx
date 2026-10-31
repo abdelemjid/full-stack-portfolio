@@ -27,6 +27,7 @@ export default function Contact() {
 
   const onSubmit: SubmitHandler<ContactInput> = async (data) => {
     console.log("Form data:", data);
+    reset(); // reset the form after a successful submit.
   };
 
   return (
